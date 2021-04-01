@@ -20,16 +20,18 @@ img {
   justify-content: center;
   margin: 0 0 20px;
   position: relative;
+  // height: 100px;
+}
 
-  &.dragging::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(142, 196, 243, 0.2);
-  }
+.dragging::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(142, 196, 243, 0.2);
+  pointer-events: none;
 }
 
 label {
