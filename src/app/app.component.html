@@ -1,7 +1,7 @@
 <div class="upload-controller" appDragAndDropFile (fileDropped)="onDrop($event)">
   <label for="file" class="uploader">
     <!-- <div class="drag">Drag and drop file here</div> -->
-    <div class="upload-btn">Click here to upload files</div>
+    <div class="upload-btn">Click or Drop to upload files</div>
     <input
       #fileInput
       type="file"
@@ -23,7 +23,7 @@
         <span class="file-name">{{file.name}}</span>
       </div>
       <div class="right">
-        <div class="file-info">{{file.size}}</div>
+        <div class="file-info">{{file.size | fileSizeConverter | uppercase}}</div>
         <div class="action">
           <div class="delete" (click)="onDelete(i)">x</div>
         </div>
