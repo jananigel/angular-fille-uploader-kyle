@@ -29,6 +29,7 @@ export class AppComponent {
       .pipe(takeUntil(fromEvent(item, "mouseup")))
       .subscribe((event: MouseEvent) => {
         item.style.position = "absolute";
+        item.style.userSelect = "none";
         item.style.left = event.clientX - mouseDown.offsetX + "px";
         item.style.top = event.clientY - mouseDown.offsetY + "px";
       });
