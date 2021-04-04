@@ -1,6 +1,5 @@
 <div class="upload-controller" appDragAndDropFile (fileDropped)="onDrop($event)">
   <label for="file" class="uploader">
-    <!-- <div class="drag">Drag and drop file here</div> -->
     <div class="upload-btn">Click or Drop to upload files</div>
     <input
       #fileInput
@@ -15,18 +14,15 @@
   </label>
 </div>
 
-<div class="content" *ngFor="let file of files; let i = index">
-  <div class="file">
-    <img [src]="file.imageUrl" />
-    <div class="file-detail">
-      <div class="left">
+<div class="content">
+  <div class="file-content" *ngFor="let file of files; let i = index">
+    <div class="file">
+      <img [src]="file.imageUrl" />
+      <div class="file-detail">
         <span class="file-name">{{file.name}}</span>
-      </div>
-      <div class="right">
-        <div class="file-info">{{file.size | fileSizeConverter | uppercase}}</div>
-        <div class="action">
-          <div class="delete" (click)="onDelete(i)">x</div>
-        </div>
+        <div class="type file-info">{{file.type}}</div>
+        <div class="size file-info">{{file.size | fileSizeConverter | uppercase}}</div>
+        <div class="delete" (click)="onDelete(i)">x</div>
       </div>
     </div>
   </div>
