@@ -29,7 +29,6 @@ export class AppComponent {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(this.files[i]);
       fileReader.onload = _event => {
-        console.log("type = ", fileReader);
         this.files[i][IMAGE_URL] = fileReader.result;
       };
     }
